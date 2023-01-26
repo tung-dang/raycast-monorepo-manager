@@ -4,6 +4,7 @@ import type { WorkspaceManager } from '../packages/workspace-manager';
 import * as cached from '../utils/cache';
 import { ActionOpenProjectLink } from '../views/ActionOpenProjectLink';
 import { ActionOpenSlackLink } from '../views/ActionOpenSlackLink';
+import { GITHUB_ISSUE_URL } from './constants';
 import { iconSublimeText, iconVSCode } from './icons';
 
 export function getCommonActions(path: string) {
@@ -22,8 +23,8 @@ export function getCommonActions(path: string) {
       shortcut={{ modifiers: ['cmd'], key: 'c' }}
     />,
     <Action.Open
-      application="com.apple.Terminal"
       key="open-in-terminal"
+      application="com.apple.Terminal"
       title="Open in Terminal"
       target={path}
       icon={Icon.Terminal}
@@ -39,30 +40,23 @@ export function getCommonActions(path: string) {
   ];
 }
 
+/**
+ * We expect these actions are rare to be triggered by users.
+ * Therefore, we don't want to add shortcuts for these actions.
+ */
 export function getRareActions(path: string) {
   return [
-    <Action.Trash
-      key="trash"
-      title="Move to Trash"
-      paths={path}
-      icon={Icon.Trash}
-      shortcut={{ modifiers: ['ctrl'], key: 'delete' }}
-    />,
-    <Action
-      key="clear-cache"
-      title="Clear Cache"
-      onAction={cached.clear}
-      icon={Icon.Circle}
-      shortcut={{ modifiers: ['ctrl'], key: 'x' }}
-    />,
+    <Action.OpenInBrowser key="submit-feedback" title="Submit Feedback" url={GITHUB_ISSUE_URL} icon={Icon.Trash} />,
+    <Action.Trash key="trash" title="Move to Trash" paths={path} icon={Icon.Trash} />,
+    <Action key="clear-cache" title="Clear Cache" onAction={cached.clear} icon={Icon.Circle} />,
   ];
 }
 
 export function getOpenInEditorActions(path: string) {
   return [
     <Action.Open
-      application="Visual Studio Code"
       key="open-in-vs-code"
+      application="Visual Studio Code"
       title="Open in Visual Studio Code"
       target={path}
       icon={iconVSCode}
@@ -70,8 +64,8 @@ export function getOpenInEditorActions(path: string) {
       shortcut={{ modifiers: ['cmd'], key: 'enter' }}
     />,
     <Action.Open
-      application="Sublime Text"
       key="open-in-sublime-text"
+      application="Sublime Text"
       title="Open in Sublime Text"
       target={path}
       icon={iconSublimeText}
@@ -86,7 +80,7 @@ export function getActionsForPackageWithTeam(
   wsManagerInstance: WorkspaceManager | null
 ) {
   return [
-    <ActionOpenSlackLink teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
-    <ActionOpenProjectLink teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
+    <ActionOpenSlackLink key="open-slack-link" teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
+    <ActionOpenProjectLink key="open-project-link" teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
   ];
 }
