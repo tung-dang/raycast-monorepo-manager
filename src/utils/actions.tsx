@@ -5,9 +5,10 @@ import * as cached from '../utils/cache';
 import { ActionOpenProjectLink } from '../views/ActionOpenProjectLink';
 import { ActionOpenSlackLink } from '../views/ActionOpenSlackLink';
 import { GITHUB_ISSUE_URL } from './constants';
-import { iconSublimeText, iconVSCode } from './icons';
+import { getGitRemoteUrl, parseGitRemoteURL } from './gits';
+import { iconGit, iconSublimeText, iconVSCode } from './icons';
 
-export function getCommonActions(path: string) {
+export function getCommonActions(path: string, rootPath?: string) {
   return [
     <Action.ShowInFinder
       key="open-in-finder"
@@ -37,6 +38,16 @@ export function getCommonActions(path: string) {
       icon={Icon.AppWindow}
       shortcut={{ modifiers: ['cmd'], key: 'o' }}
     />,
+
+    getGitRemoteUrl(rootPath || path) ? (
+      <Action.OpenInBrowser
+        key="open-in-remote"
+        title="Open Remote URL"
+        icon={iconGit}
+        url={parseGitRemoteURL(rootPath || path)}
+        shortcut={{ modifiers: ['cmd'], key: 'r' }}
+      />
+    ) : null,
   ];
 }
 

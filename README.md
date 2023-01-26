@@ -30,9 +30,11 @@ A worksapce, normal folder and package have these common actions:
 
 ### Common actions
 
-- `Show in Finder`: : open selected workspace/folder/package in Finder.
+- `Open in Finder`: : open selected workspace/folder/package in Finder.
 - `Copy Path`: copy path of selected workspace/folder/package.
 - `Open in Terminal`: open selected workspace/folder/package in Terminal app.
+- `Open With...`: open selected workspace/folder/package in any applications.
+- `Open Remote URL`: open remote git URL of selected workspace/folder/package in browser.
 
 ### Actions if a package has a team information
 
