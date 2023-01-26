@@ -6,7 +6,12 @@ import * as cached from '../utils/cache';
 import { WorkspaceManager } from '../packages/workspace-manager';
 import { PackageDetail } from './PackageDetail';
 import type { Workspace } from '@yarnpkg/core';
-import { getActionsForPackageWithTeam, getCommonActions, getOpenInEditorActions, getRareActions } from '../utils/actions';
+import {
+  getActionsForPackageWithTeam,
+  getCommonActions,
+  getOpenInEditorActions,
+  getRareActions,
+} from '../utils/actions';
 
 interface Props {
   workspace: SimplifiedWorkspace;
@@ -90,9 +95,7 @@ export function PackagesList(props: Props) {
 
                 <ActionPanel.Section>{getOpenInEditorActions(path)}</ActionPanel.Section>
 
-                <ActionPanel.Section>
-                  {getActionsForPackageWithTeam(teamName, it, wsManager)}
-                </ActionPanel.Section>
+                <ActionPanel.Section>{getActionsForPackageWithTeam(teamName, it, wsManager)}</ActionPanel.Section>
 
                 <ActionPanel.Section>{getCommonActions(path)}</ActionPanel.Section>
                 <ActionPanel.Section>{getRareActions(path)}</ActionPanel.Section>
