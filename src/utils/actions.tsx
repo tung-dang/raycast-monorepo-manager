@@ -80,7 +80,17 @@ export function getActionsForPackageWithTeam(
   wsManagerInstance: WorkspaceManager | null
 ) {
   return [
-    <ActionOpenSlackLink key="open-slack-link" teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
-    <ActionOpenProjectLink key="open-project-link" teamName={teamName} workspace={ws} workspaceRootInstance={wsManagerInstance} />,
+    <ActionOpenSlackLink
+      key="open-slack-link"
+      teamName={teamName}
+      workspace={ws}
+      workspaceRootInstance={wsManagerInstance}
+    />,
+    <ActionOpenProjectLink
+      key="open-project-link"
+      teamName={teamName}
+      workspace={ws}
+      workspaceRootInstance={wsManagerInstance}
+    />,
   ];
 }
