@@ -97,7 +97,7 @@ export function PackagesList(props: Props) {
 
                 <ActionPanel.Section>{getActionsForPackageWithTeam(teamName, it, wsManager)}</ActionPanel.Section>
 
-                <ActionPanel.Section>{getCommonActions(path)}</ActionPanel.Section>
+                <ActionPanel.Section>{getCommonActions(path, wsManager?.$cwd)}</ActionPanel.Section>
                 <ActionPanel.Section>{getRareActions(path)}</ActionPanel.Section>
               </ActionPanel>
             }
