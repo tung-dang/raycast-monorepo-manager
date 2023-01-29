@@ -22,9 +22,9 @@ jobs:
           install-yarn: false
           node-version: '18.11.0'
       - run: node --version
-      - run:
-          name: "Run lint"
-          command: "npm run lint"
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
