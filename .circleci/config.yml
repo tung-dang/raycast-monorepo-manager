@@ -21,6 +21,8 @@ jobs:
           node-version: '18.11.0'
       - run: node --version
   say-hello:
+    docker:
+      - image: 'cimg/base:stable'
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     steps:
