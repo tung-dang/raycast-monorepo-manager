@@ -1,4 +1,6 @@
-## Intro about Raycast Monorepo
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/tung-dang/raycast-monorepo-manager/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/tung-dang/raycast-monorepo-manager/tree/main)
+
+## Introduction about Raycast Monorepo
 
 This Raycast Monorepo is an extension which is installed in [Raycast](https://www.raycast.com/).
 
