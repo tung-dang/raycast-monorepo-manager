@@ -116,7 +116,7 @@ If you follow next section to setup `teams.json` file, the Package Detail view c
 1. Install this [Raycast VSCode extension](https://marketplace.visualstudio.com/items?itemName=tonka3000.raycast)
 2. In VSCode, press `Cmd + Shift + P` -> choose `Raycast: Start Development Mode`
 3. Now you can follow this [Raycast document](https://developers.raycast.com/basics/debug-an-extension) for debugging.
-4. After testing in the `main` branch, we can follow this [Raycast document](https://developers.raycast.com/basics/publish-an-extension) to update the extension in store. At this moment, we do manually coping all files to the Raycast repo except these folders:
+4. After testing in the `main` branch, we can follow this [Raycast document](https://developers.raycast.com/basics/publish-an-extension) to update the extension in [the Raycast store](https://www.raycast.com/store). At this moment, we do manually coping all files to the Raycast repo except these folders:
 
 - `node_modules`
 - `.circleci`
