@@ -3,6 +3,10 @@
 ## Introduction about Raycast Monorepo
 
 This Raycast Monorepo is an extension which is installed in [Raycast](https://www.raycast.com/).
+The extension helps you to:
+
+- Open project folder quickly
+- If the project is a Yarn/Npm monorepo, it can list all packages inside the monorepo, filter and open a single package quickly. Each package can has some metadata (such as team information, Jira project url...) and you can quick view these metadata. 
 
 ### Workspace List view
 
