@@ -58,11 +58,11 @@
     }
   ],
   "dependencies": {
-    "@raycast/api": "latest",
-    "@yarnpkg/core": "latest",
-    "fs-extra": "latest",
-    "lodash": "latest",
-    "parse-git-config": "latest"
+    "@raycast/api": "^1.46.1",
+    "@yarnpkg/core": "^4.0.0-rc.37",
+    "fs-extra": "^11.1.0",
+    "lodash": "^4.17.21",
+    "parse-git-config": "^3.0.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
