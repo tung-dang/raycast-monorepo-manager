@@ -127,6 +127,7 @@ If you follow the next section to setup `teams.json` file, the Package Detail vi
 - `node_modules`
 - `.circleci`
 - `.github`
+- `.git`
 
 ---
 
