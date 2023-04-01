@@ -59,7 +59,7 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.46.1",
-    "@yarnpkg/core": "^4.0.0-rc.37",
+    "@yarnpkg/core": "^4.0.0-rc.42",
     "fs-extra": "^11.1.0",
     "lodash": "^4.17.21",
     "parse-git-config": "^3.0.0"
